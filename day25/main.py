@@ -1,4 +1,4 @@
-import networkx as nx
+import networkx as nx ## aka le s
 import matplotlib.pyplot as plt
 
 if __name__ == '__main__':
@@ -15,9 +15,9 @@ if __name__ == '__main__':
             for connected_component in connected_components:
                 G.add_edge(component, connected_component)
 
-    # Calculate edge betweenness centrality
+    # Calculate edge betweenness centrality (strongness of links/redondancy)
     edge_betweenness = nx.edge_betweenness_centrality(G)
-    print(edge_betweenness)
+
     # Sort edges by betweenness centrality
     sorted_edges = sorted(edge_betweenness.items(), key=lambda x: x[1], reverse=True)
 
@@ -32,4 +32,3 @@ if __name__ == '__main__':
     # Draw the graph
     nx.draw(G, with_labels=True)
     plt.show()
-    
